@@ -1,3 +1,6 @@
+3.0.7.1
+* Removed Garrison icon from the minimapbutton due to bug. I will re-add it as an option and when i fix the bug.
+
 3.0.7
 * Updated welcome message.
 * Raidmarkerbar: Updated the bar to hide when leaving a party/group.
