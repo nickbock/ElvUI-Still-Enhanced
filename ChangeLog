@@ -1,3 +1,8 @@
+3.0.8
+* updated to 6.1.0
+* fixed location bar position. thanks pletfjerner@curse for the report.
+* fixed raidmarkerbar illegal interface actions error
+
 3.0.7.1
 * Removed Garrison icon from the minimapbutton due to bug. I will re-add it as an option and when i fix the bug.
 
