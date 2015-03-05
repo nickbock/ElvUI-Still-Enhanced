@@ -17,6 +17,8 @@ V.general.minimapbar = {
 	['layoutDirection'] = 'NORMAL',
 	['buttonSize'] = 28,
 	['mouseover'] = false,
+	['mbcalendar'] =  false,
+	['mbgarrison'] = false,
 }
 
 V.general.raidmarkerbar = {

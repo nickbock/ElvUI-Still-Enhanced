@@ -363,6 +363,7 @@ function EO:MapOptions()
 				name = L['Skin Style'],
 				desc = L['Change settings for how the minimap buttons are skinned.'],
 				disabled = function() return not E.private.general.minimapbar.skinButtons end,
+				set = function(info, value) E.private.general.minimapbar[ info[#info] ] = value; MB:UpdateSkinStyle() end,
 				values = {
 					['NOANCHOR'] = L['No Anchor Bar'],
 					['HORIZONTAL'] = L['Horizontal Anchor Bar'],
@@ -402,6 +403,30 @@ function EO:MapOptions()
 				set = function(info, value) E.private.general.minimapbar.mouseover = value; MB:ChangeMouseOverSetting() end,
 				disabled = function() return not E.private.general.minimapbar.skinButtons or E.private.general.minimapbar.skinStyle == 'NOANCHOR' end,
 			},
+			mmbuttons = {
+				order = 7,
+				type = "group",
+				name = L["Minimap Buttons"],
+				guiInline = true,
+				args = {
+					mbgarrison = {
+						order = 1,
+						name = GARRISON_LOCATION_TOOLTIP,
+						desc = L['TOGGLESKIN_DESC'],
+						type = "toggle",
+						disabled = function() return not E.private.general.minimapbar.skinButtons or E.private.general.minimapbar.skinStyle == 'NOANCHOR' end,
+						set = function(info, value) E.private.general.minimapbar.mbgarrison = value; E:StaticPopup_Show("PRIVATE_RL") end,
+					},
+					mbcalendar = {
+						order = 1,
+						name = L['Calendar'],
+						desc = L['TOGGLESKIN_DESC'],
+						type = "toggle",
+						disabled = function() return not E.private.general.minimapbar.skinButtons or E.private.general.minimapbar.skinStyle == 'NOANCHOR' end,
+						set = function(info, value) E.private.general.minimapbar.mbcalendar = value; E:StaticPopup_Show("PRIVATE_RL") end,
+					}
+				}
+			}
 		}
 	}
 	

@@ -1,3 +1,21 @@
+3.0.9
+
+***
+** I would really like to push 3.1 to release status instead of beta. If you find any bugs or features that are 
+** not working please let me know by creating a ticket: http://wow.curseforge.com/addons/elvui-enhanced-mod-wod/create-ticket/ 
+***
+
+* Minimapbar: Added the option to add the Garrison button to the minimap button bar. (General -> Minimap Button Bar)
+* Minimapbar: Added the option to add the Calendar button to the minimap button bar. (General -> Minimap Button Bar)
+* Minimapbar: Error with minimapbar in No Anchor mode and TradeSkillMaster. Workaround for the error in place. icon position is not saved on reload.
+* Minimapbar: Bugfix where in no anchor mode the position of the icons would reset onclick.
+* HealGlow: updated Wild Mushroom SpellId
+* HealGlow: Added Paladin Daybreak
+* HealGlow: Fixed for flexraid frames
+
+Known Issue:
+* TradeSkillMaster icon position in NO ANCHOR mode is not saved.
+
 3.0.8
 * updated to 6.1.0
 * fixed location bar position. thanks pletfjerner@curse for the report.
