@@ -24,7 +24,7 @@ local raidmarkerVisibility = {
 }
 
 local function ColorizeSettingName(settingName)
-	return ("|cffE0B0FF%s|r"):format(settingName)
+	return ("|cffff8000%s|r"):format(settingName)
 end
 
 function EO:DataTextOptions()
@@ -726,13 +726,6 @@ function EO:UnitFramesOptions()
 		},
 	}
 
-	E.Options.args.unitframe.args.general.args.generalGroup.args.autoRoleSet = {
-		order = 6,
-		name = ColorizeSettingName(L['Automatic Role Assignment']),
-		desc = L['Enables the automatic role assignment based on specialization for party / raid members (only work when you are group leader or group assist).'],
-		type = 'toggle',
-	}
-	
 	E.Options.args.unitframe.args.general.args.generalGroup.args.hideroleincombat = {
 		order = 7,
 		name = ColorizeSettingName(L['Hide Role Icon in combat']),
