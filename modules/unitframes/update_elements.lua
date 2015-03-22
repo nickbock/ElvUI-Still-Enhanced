@@ -7,28 +7,6 @@ local pairs, type, select, unpack = pairs, type, select, unpack
 local GetPlayerMapPosition, GetPlayerFacing = GetPlayerMapPosition, GetPlayerFacing
 local unitframeFont
 
-local roleIconTextures = {
-	TANK = [[Interface\AddOns\ElvUI\media\textures\tank.tga]],
-	HEALER = [[Interface\AddOns\ElvUI\media\textures\healer.tga]],
-	DAMAGER = [[Interface\AddOns\ElvUI\media\textures\dps.tga]],
-	DC = [[Interface\AddOns\ElvUI_Enhanced\media\textures\dc.tga]],
-}
-
-local classes = {	DEATHKNIGHT, DRUID, HUNTER,	MAGE, MONK, PALADIN, PRIEST, ROGUE, SHAMAN, WARLOCK, WARRIOR }
-local specializations = { }
-
-for classID = 1, MAX_CLASSES do
-	local _, classTag = GetClassInfoByID(classID)
-	local numTabs = GetNumSpecializationsForClassID(classID)
-	classes[classTag] = {}
-	for i = 1, numTabs do
-		local id, name = GetSpecializationInfoForClassID(classID, i)
-		local role = GetSpecializationRoleByID(id)
-		classes[classTag][i] = { role = role, specName = name }
-		specializations[id] = role
-	end
-end
-
 local function CalculateCorner(r)
 	return 0.5 + cos(r) / sqrt2, 0.5 + sin(r) / sqrt2;
 end

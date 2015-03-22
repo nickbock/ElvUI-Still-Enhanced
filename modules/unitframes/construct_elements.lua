@@ -15,7 +15,7 @@ local eclipsedirection = {
   end,
 }
 
-function UF:Construct_GPS(frame, unit)
+function UF:Construct_Unit_GPS(frame, unit)
 	if not frame then return end
 	
 	local gps = CreateFrame("Frame", nil, frame)
@@ -141,8 +141,8 @@ end
 function UF:ApplyUnitFrameEnhancements()
 	UF:ScheduleTimer("EnhanceDruidEclipse", 5)
 	UF:ScheduleTimer("AddShouldIAttackIcon", 8, _G["ElvUF_Target"])
-	UF:ScheduleTimer("Construct_GPS", 10, _G["ElvUF_Target"], 'target')
-	UF:ScheduleTimer("Construct_GPS", 12, _G["ElvUF_Focus"], 'focus')
+	UF:ScheduleTimer("Construct_Unit_GPS", 10, _G["ElvUF_Target"], 'target')
+	UF:ScheduleTimer("Construct_Unit_GPS", 12, _G["ElvUF_Focus"], 'focus')
 	UF:ScheduleTimer("EnhanceUpdateRoleIcon", 15)
 end
 
