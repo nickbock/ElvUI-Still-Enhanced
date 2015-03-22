@@ -1,10 +1,10 @@
+3.1.0-beta1
+* Fixed role icons hiding in combat
+* Removed the option "Auto role icon" since this is now a feature of WoW and ElvUI it self.
+* Fixed bug when entering or leaving a raid. (Ticket: 4-lua-error-when-i-enter-in-raid)
+* Changed the color of the enhanced settings.
+
 3.0.9
-
-***
-** I would really like to push 3.1 to release status instead of beta. If you find any bugs or features that are 
-** not working please let me know by creating a ticket: http://wow.curseforge.com/addons/elvui-enhanced-mod-wod/create-ticket/ 
-***
-
 * Minimapbar: Added the option to add the Garrison button to the minimap button bar. (General -> Minimap Button Bar)
 * Minimapbar: Added the option to add the Calendar button to the minimap button bar. (General -> Minimap Button Bar)
 * Minimapbar: Error with minimapbar in No Anchor mode and TradeSkillMaster. Workaround for the error in place. icon position is not saved on reload.

@@ -15,7 +15,7 @@ local eclipsedirection = {
   end,
 }
 
-function UF:Construct_GPS(frame, unit)
+function UF:Construct_Unit_GPS(frame, unit)
 	if not frame then return end
 	
 	local gps = CreateFrame("Frame", nil, frame)
@@ -113,29 +113,26 @@ function UF:AddShouldIAttackIcon(frame)
 end
 
 function UF:EnhanceUpdateRoleIcon()
+	local frameGroups = {5, 25, 40}
 	local frame
-	for i=1, 5 do
-		UF:UpdateRoleIconFrame(_G[("ElvUF_PartyGroup1UnitButton%d"):format(i)])
-	end
-	for r=10,40,15 do
-		for i=1, (r/5) do
+
+	for _, index in ipairs(frameGroups) do
+		for i=1, (index/5) do
 			for j=1, 5 do
-				UF:UpdateRoleIconFrame(_G[("ElvUF_Raid%dGroup%dUnitButton%i"):format(r, i, j)])
+				frame = (index == 5 and _G[("ElvUF_PartyGroup%dUnitButton%i"):format(i, j)] or index == 25 and _G[("ElvUF_RaidGroup%dUnitButton%i"):format(i, j)] or _G[("ElvUF_Raid%dGroup%dUnitButton%i"):format(index, i, j)])
+				if frame then
+					UF:UpdateRoleIconFrame(frame, ((index == 5 and 'party%d' or index == 25 and 'raid' or 'raid%d')):format(i))
+				end
 			end
 		end
 	end
-	
-	UF:UpdateAllHeaders()
+		
+	--UF:UpdateAllHeaders()
 end
 
 function UF:UpdateRoleIconFrame(frame)
 	if not frame then return end
 
-	frame:UnregisterEvent("UNIT_CONNECTION")
-	frame:RegisterEvent("UNIT_CONNECTION", UF.UpdateRoleIconEnhanced)
-	
-	frame.LFDRole.Override = UF.UpdateRoleIconEnhanced
-	
 	if E.db.unitframe.hideroleincombat then
 		RegisterStateDriver(frame.LFDRole:GetParent(), 'visibility', '[combat]hide;show')
 	end
@@ -144,8 +141,8 @@ end
 function UF:ApplyUnitFrameEnhancements()
 	UF:ScheduleTimer("EnhanceDruidEclipse", 5)
 	UF:ScheduleTimer("AddShouldIAttackIcon", 8, _G["ElvUF_Target"])
-	UF:ScheduleTimer("Construct_GPS", 10, _G["ElvUF_Target"], 'target')
-	UF:ScheduleTimer("Construct_GPS", 12, _G["ElvUF_Focus"], 'focus')
+	UF:ScheduleTimer("Construct_Unit_GPS", 10, _G["ElvUF_Target"], 'target')
+	UF:ScheduleTimer("Construct_Unit_GPS", 12, _G["ElvUF_Focus"], 'focus')
 	UF:ScheduleTimer("EnhanceUpdateRoleIcon", 15)
 end
 
