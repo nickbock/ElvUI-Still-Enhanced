@@ -1,9 +1,8 @@
-3.1.0
+3.1.0-beta1
 * Fixed role icons hiding in combat
 * Removed the option "Auto role icon" since this is now a feature of WoW and ElvUI it self.
 * Fixed bug when entering or leaving a raid. (Ticket: 4-lua-error-when-i-enter-in-raid)
-
-
+* Changed the color of the enhanced settings.
 
 3.0.9
 * Minimapbar: Added the option to add the Garrison button to the minimap button bar. (General -> Minimap Button Bar)
