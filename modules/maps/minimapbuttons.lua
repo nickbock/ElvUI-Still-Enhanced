@@ -128,11 +128,11 @@ function MB:SkinButton(frame)
 		end
 	end
 	
-	if name ~= "GarrisonLandingPageMinimapButton" and not E.minimapbuttons.db.mbgarrison then 
+	if name ~= "GarrisonLandingPageMinimapButton" then 
 		frame:SetPushedTexture(nil)
-		frame:SetHighlightTexture(nil)
 		frame:SetDisabledTexture(nil)
 	end
+	frame:SetHighlightTexture(nil)
 	
 	if name == "DBMMinimapButton" then frame:SetNormalTexture("Interface\\Icons\\INV_Helmet_87") end
 	if name == "SmartBuff_MiniMapButton" then frame:SetNormalTexture(select(3, GetSpellInfo(12051))) end
