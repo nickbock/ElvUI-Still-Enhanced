@@ -1,8 +1,8 @@
-## Interface: 60100
+## Interface: 60200
 ## Title: |cff1784d1ElvUI|r Enhanced (WOD)
 ## Author: Feraldin, Instant
 ## X-Credits: Tristimdorio (Omega1970), Azilroka, Lockslap, Sortokk, Repooc, moresunders
-## Version: 3.1.0-beta3
+## Version: 3.1.0-beta4
 ## Notes: Plugin-Enhancements for |cff1784d1ElvUI|r.
 ## X-Category: Plugins
 ## URL: http://wow.curseforge.com/addons/elvui-enhanced-mod-wod/
