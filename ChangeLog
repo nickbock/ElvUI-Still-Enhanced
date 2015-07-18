@@ -1,3 +1,7 @@
+3.1.0-beta5
+* added HFC to progression tooltip
+* progression info is not updated or shown while in combat. This is to fix the performance problems while use mouseover spells during combat.
+
 3.1.0-beta4
 * bumb version for 6.2.0
 
